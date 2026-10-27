@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Avaliar_So_Inscricao_Concluida</fullName>
+    <active>true</active>
+    <description>RN03: a avaliação só é aceita se a inscrição do corredor está Concluiu.</description>
+    <errorConditionFormula>NOT(ISPICKVAL(Inscricao__r.Situacao__c, &quot;Concluiu&quot;))</errorConditionFormula>
+    <errorDisplayField>Inscricao__c</errorDisplayField>
+    <errorMessage>Só é possível avaliar a prova depois de concluí-la. A inscrição precisa estar com a situação Concluiu.</errorMessage>
+</ValidationRule>

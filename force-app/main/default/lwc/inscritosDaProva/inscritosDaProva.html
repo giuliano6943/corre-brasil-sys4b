@@ -1,0 +1,69 @@
+<template>
+    <lightning-card title="Inscritos da prova" icon-name="standard:user">
+        <lightning-button-icon
+            slot="actions"
+            icon-name="utility:refresh"
+            alternative-text="Atualizar"
+            onclick={handleAtualizar}>
+        </lightning-button-icon>
+
+        <div class="slds-var-p-horizontal_medium">
+
+            <!-- Vagas: dados da própria prova -->
+            <template lwc:if={erroProva}>
+                <p class="slds-text-color_error">
+                    Não foi possível carregar as vagas desta prova.
+                </p>
+            </template>
+            <template lwc:elseif={provaCarregada}>
+                <div class="slds-grid slds-wrap slds-var-m-bottom_medium">
+                    <div class="slds-col slds-size_1-of-4">
+                        <p class="slds-text-title">Vagas</p>
+                        <p class="slds-text-heading_small">{vagas}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <p class="slds-text-title">Ocupadas</p>
+                        <p class="slds-text-heading_small">{ocupadas}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <p class="slds-text-title">Restantes</p>
+                        <p class="slds-text-heading_small">{restantes}</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <p class="slds-text-title">Situação</p>
+                        <p class="slds-text-heading_small">{situacao}</p>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Lista de inscritos -->
+            <template lwc:if={carregando}>
+                <lightning-spinner alternative-text="Carregando" size="small"></lightning-spinner>
+            </template>
+            <template lwc:elseif={erroInscritos}>
+                <div class="slds-text-color_error slds-var-p-vertical_small">
+                    {mensagemErro}
+                </div>
+            </template>
+            <template lwc:elseif={listaVazia}>
+                <div class="slds-text-color_weak slds-var-p-vertical_small">
+                    Esta prova ainda não tem inscrições.
+                </div>
+            </template>
+            <template lwc:else>
+                <lightning-datatable
+                    key-field="inscricaoId"
+                    data={inscritos}
+                    columns={colunas}
+                    hide-checkbox-column>
+                </lightning-datatable>
+                <template lwc:if={atingiuLimite}>
+                    <p class="slds-text-color_weak slds-var-p-vertical_x-small">
+                        Mostrando as primeiras 200 inscrições.
+                    </p>
+                </template>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

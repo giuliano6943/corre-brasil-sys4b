@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coordenador_So_Na_Propria_Regiao</fullName>
+    <active>true</active>
+    <description>Coordenador só cria e edita provas da região do próprio papel (RN14)</description>
+    <errorConditionFormula>AND(
+  $Profile.Name = &quot;Coordenador Regional&quot;,
+  NOT(CONTAINS($UserRole.Name, TEXT(Regiao__c)))
+)</errorConditionFormula>
+    <errorDisplayField>Regiao__c</errorDisplayField>
+    <errorMessage>O coordenador só pode cadastrar ou alterar provas da própria região.</errorMessage>
+</ValidationRule>

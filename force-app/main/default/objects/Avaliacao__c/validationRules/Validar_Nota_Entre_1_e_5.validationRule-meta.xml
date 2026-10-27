@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validar_Nota_Entre_1_e_5</fullName>
+    <active>true</active>
+    <description>RN03: a nota da avaliação deve estar entre 1 e 5.</description>
+    <errorConditionFormula>OR(Nota__c &lt; 1, Nota__c &gt; 5)</errorConditionFormula>
+    <errorDisplayField>Nota__c</errorDisplayField>
+    <errorMessage>A nota deve ser um número inteiro entre 1 e 5.</errorMessage>
+</ValidationRule>

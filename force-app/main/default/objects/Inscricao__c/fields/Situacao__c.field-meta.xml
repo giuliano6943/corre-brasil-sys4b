@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Situacao__c</fullName>
+    <description>Objeto criado pelo grupo 5</description>
+    <label>Situacao</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Confirmada</fullName>
+                <default>false</default>
+                <label>Confirmada</label>
+            </value>
+            <value>
+                <fullName>Concluiu</fullName>
+                <default>false</default>
+                <label>Concluiu</label>
+            </value>
+            <value>
+                <fullName>Não largou</fullName>
+                <default>false</default>
+                <label>Não largou</label>
+            </value>
+            <value>
+                <fullName>Cancelada</fullName>
+                <default>false</default>
+                <label>Cancelada</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validar_taxa_negativa</fullName>
+    <active>true</active>
+    <description>RN06: A taxa de inscrição não pode ser negativa : 0 é aceito (cortesia)</description>
+    <errorConditionFormula>Taxa_de_Inscricao__c  &lt; 0</errorConditionFormula>
+    <errorDisplayField>Taxa_de_Inscricao__c</errorDisplayField>
+    <errorMessage>A taxa de inscrição não pode ser negativa : Valores a partir de R$ 0,00 são aceitos (cortesia)</errorMessage>
+</ValidationRule>

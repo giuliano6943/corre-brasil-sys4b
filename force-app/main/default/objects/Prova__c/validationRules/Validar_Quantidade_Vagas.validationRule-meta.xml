@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validar_Quantidade_Vagas</fullName>
+    <active>true</active>
+    <errorConditionFormula>Vagas__c &lt; 1 || Vagas__c &gt; 3000</errorConditionFormula>
+    <errorDisplayField>Vagas__c</errorDisplayField>
+    <errorMessage>A quantidade de vagas estipulada pela prefeitura deve ser obrigatoriamente entre 1 e 3.000 corredores</errorMessage>
+</ValidationRule>

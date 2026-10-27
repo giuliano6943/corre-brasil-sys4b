@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Largada_Nao_Pode_Ser_No_Passado</fullName>
+    <active>true</active>
+    <description>RN04: bloqueia largada no passado, exceto carga histórica (RN15)</description>
+    <errorConditionFormula>AND(
+  NOT(ISBLANK(Data_e_Hora_da_Largada__c)),
+  NOT($Permission.Carga_historica),
+  OR(ISNEW(), ISCHANGED(Data_e_Hora_da_Largada__c)),
+  Data_e_Hora_da_Largada__c &lt; NOW()
+)</errorConditionFormula>
+    <errorDisplayField>Data_e_Hora_da_Largada__c</errorDisplayField>
+    <errorMessage>A largada não pode ser no passado. Escolha uma data e hora futuras.</errorMessage>
+</ValidationRule>

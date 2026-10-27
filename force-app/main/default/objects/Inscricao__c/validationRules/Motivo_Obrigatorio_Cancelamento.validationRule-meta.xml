@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Motivo_Obrigatorio_Cancelamento</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Situacao__c, &quot;Cancelada&quot;),
+    ISPICKVAL(Motivo_do_Cancelamento__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorDisplayField>Motivo_do_Cancelamento__c</errorDisplayField>
+    <errorMessage>Para alterar a situação para Cancelada, é obrigatório preencher o motivo do cancelamento</errorMessage>
+</ValidationRule>

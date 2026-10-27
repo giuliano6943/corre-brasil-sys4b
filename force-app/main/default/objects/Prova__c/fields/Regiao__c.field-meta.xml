@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regiao__c</fullName>
+    <description>Objeto criado pelo grupo 5</description>
+    <label>Regiao</label>
+    <required>true</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Sudeste</fullName>
+                <default>false</default>
+                <label>Sudeste</label>
+            </value>
+            <value>
+                <fullName>Sul</fullName>
+                <default>false</default>
+                <label>Sul</label>
+            </value>
+            <value>
+                <fullName>Nordeste</fullName>
+                <default>false</default>
+                <label>Nordeste</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
